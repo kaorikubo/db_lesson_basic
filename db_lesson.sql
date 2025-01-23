@@ -103,5 +103,24 @@ Q10
 SELECT people.name, reports.content
     FROM people 
     INNER JOIN reports 
+    ON people.person_id = reports.person_id;
+
+
+update reports set person_id = 36 where report_id = 31;
+
+SELECT people.name, departments.name
+    FROM people 
+    INNER JOIN departments 
     ON people.department_id = departments.department_id;
-    
+
+SELECT 
+name, department_id, content
+FROM 
+people INNER JOIN reports ON people.person_id = reports.person_id;
+
+Q11
+SELECT name
+FROM people LEFT OUTER JOIN reports ON people.person_id = reports.person_id
+WHERE content is NULL;
+
+SELECT name FROM people AS p LEFT OUTER JOIN reports AS r ON p.person_id = r.person_id WHERE content is NULL;
