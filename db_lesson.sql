@@ -101,10 +101,7 @@ AND department_id = 2;
 
 Q10
 
-SELECT 
-name, department_id, content
-FROM 
-people INNER JOIN reports ON people.person_id = reports.person_id;
+SELECT people.name, departments.name, content FROM people INNER JOIN reports ON people.person_id = reports.person_id INNER JOIN departments ON people.department_id = departments.department_id;
 
 Q11
 SELECT name
